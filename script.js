@@ -163,12 +163,20 @@ function openMovieModal(movie) {
     modalGenre.textContent = movie.genre;
     modalDescription.textContent = movie.description;
 
-    // Set trailer
+// In your openMovieModal function, replace the trailerContainer1 part with:
+if (movie.trailer1) {
     trailerContainer.innerHTML = `
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${movie.trailer}?autoplay=1" 
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-        gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://shavetape.cash/e/${movie.trailer1}/" 
+        width="100%" height="100%" allowfullscreen allowtransparency 
+        allow="autoplay" scrolling="no" frameborder="0"></iframe>
     `;
+} else if (movie.trailer) {
+    trailerContainer.innerHTML = `
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${movie.trailer}" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+        encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    `;
+}
 
     // Set trailer
     trailerContainer1.innerHTML = `
@@ -208,9 +216,9 @@ function scrollMovies(rowId, scrollAmount) {
 
 // Function to scroll to  movies section
 function scrollToTrendingMovies() {
-    const hindiSection = document.getElementById('trending-section');
-    if (hindiSection) {
-        hindiSection.scrollIntoView({ behavior: 'smooth' });
+    const trendingSection = document.getElementById('trending-section');
+    if (trendingSection) {
+        trendingSection.scrollIntoView({ behavior: 'smooth' });
     }
 }
 
