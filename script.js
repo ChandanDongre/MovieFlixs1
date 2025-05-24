@@ -1,7 +1,7 @@
 // Movie data
 const moviesData = {
     trending: [
-        { title: "RRR", year: 2022, genre: "Action/Drama", poster: "https://upload.wikimedia.org/wikipedia/en/d/d7/RRR_Poster.jpg", trailer: "f_vbAtFSEc0", description: "A fictitious story about two legendary revolutionaries and their journey away from home before they started fighting for their country in the 1920s." },
+        { title: "RRR", year: 2022, genre: "Action/Drama", poster: "https://upload.wikimedia.org/wikipedia/en/d/d7/RRR_Poster.jpg",trailer1: "OxOqG6GxXVh6e9", description: "A fictitious story about two legendary revolutionaries and their journey away from home before they started fighting for their country in the 1920s." },
         { title: "The Batman", year: 2022, genre: "Action/Crime", poster: "https://upload.wikimedia.org/wikipedia/en/f/ff/The_Batman_%28film%29_poster.jpg", trailer: "mqqft2x_Aa4", description: "When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement." },
         { title: "Top Gun: Maverick", year: 2022, genre: "Action/Drama", poster: "https://upload.wikimedia.org/wikipedia/en/1/13/Top_Gun_Maverick_Poster.jpg", trailer: "giXco2jaZ_4", description: "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him." },
         { title: "Everything Everywhere All at Once", year: 2022, genre: "Sci-fi/Comedy", poster: "https://upload.wikimedia.org/wikipedia/en/1/1e/Everything_Everywhere_All_at_Once.jpg", trailer: "wxN1T1uxQ2g", description: "An aging Chinese immigrant is swept up in an insane adventure, where she alone can save the world by exploring other universes connecting with the lives she could have led." },
@@ -170,6 +170,11 @@ function openMovieModal(movie) {
         gyroscope; picture-in-picture" allowfullscreen></iframe>
     `;
 
+    // Set trailer
+    trailerContainer1.innerHTML = `
+        <iframe src="https://shavetape.cash/e/${movie.trailer1}/" width="800" height="600" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0"></iframe>
+    `;
+
     // Show modal
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -182,6 +187,9 @@ function closeModal() {
 
     const trailerContainer = document.getElementById('trailer-container');
     if (trailerContainer) trailerContainer.innerHTML = '';
+
+    const trailerContainer1 = document.getElementById('trailer-container1');
+    if (trailerContainer) trailerContainer1.innerHTML = '';
 
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
@@ -198,9 +206,9 @@ function scrollMovies(rowId, scrollAmount) {
     }
 }
 
-// Function to scroll to Hindi movies section
-function scrollToHindiMovies() {
-    const hindiSection = document.getElementById('hindi-section');
+// Function to scroll to  movies section
+function scrollToTrendingMovies() {
+    const hindiSection = document.getElementById('trending-section');
     if (hindiSection) {
         hindiSection.scrollIntoView({ behavior: 'smooth' });
     }
