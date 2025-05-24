@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieFlix - Stream Movies & TV Shows</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="logo">MovieFlix</a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="categories.html">Categories</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Unlimited Movies, TV Shows, and More</h1>
+        <p>Watch anywhere. Cancel anytime.</p>
+        <button class="hero-button" id="explore-button">Explore Now</button>
+    </section>
+
+    <!-- Movie Categories Sections -->
+    <section class="movie-section" id="trending-section">
+        <div class="section-header">
+            <h2 class="section-title">Trending Now</h2>
+            <div class="scroll-buttons">
+                <button class="scroll-btn" onclick="scrollMovies('trending-movies', -600)">❮</button>
+                <button class="scroll-btn" onclick="scrollMovies('trending-movies', 600)">❯</button>
+            </div>
+        </div>
+        <div class="movie-row" id="trending-movies"></div>
+    </section>
+
+    <section class="movie-section" id="hindi-section">
+        <div class="section-header">
+            <h2 class="section-title">Hindi Movies</h2>
+            <div class="scroll-buttons">
+                <button class="scroll-btn" onclick="scrollMovies('hindi-movies', -600)">❮</button>
+                <button class="scroll-btn" onclick="scrollMovies('hindi-movies', 600)">❯</button>
+            </div>
+        </div>
+        <div class="movie-row" id="hindi-movies"></div>
+    </section>
+
+    <section class="movie-section" id="english-section">
+        <div class="section-header">
+            <h2 class="section-title">English Movies</h2>
+            <div class="scroll-buttons">
+                <button class="scroll-btn" onclick="scrollMovies('english-movies', -600)">❮</button>
+                <button class="scroll-btn" onclick="scrollMovies('english-movies', 600)">❯</button>
+            </div>
+        </div>
+        <div class="movie-row" id="english-movies"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">FAQ</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <p>&copy; 2025 MovieFlix. All rights reserved.</p>
+    </footer>
+
+    <!-- Movie Modal -->
+    <div id="movie-modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal()">✕</div>
+            <div id="trailer-container"></div>
+            <div class="modal-details">
+                <div class="modal-header">
+                    <h2 id="modal-title"></h2>
+                    <div class="modal-meta">
+                        <span id="modal-year"></span>
+                        <span id="modal-genre"></span>
+                    </div>
+                </div>
+                <p id="modal-description"></p>
+                <button class="watch-now-btn">Watch Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
